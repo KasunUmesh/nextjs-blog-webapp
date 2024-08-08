@@ -1,5 +1,16 @@
-export const sayHello = async () => {
-    "use server";
+"use server";
+import { signIn, signOut } from "./auth";
 
-    console.log("Hello");
+// export const sayHello = async () => {
+//     "use server";
+
+//     console.log("Hello");
+// }
+
+export const handleGithubLogin = async () => {
+    await signIn("github");
+}
+
+export const handleLogout = async () => {
+    await signOut();
 }
